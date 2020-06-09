@@ -9,21 +9,7 @@ class Brand extends CI_Controller {
 		$this->load->model('product_model', 'product');
 	}
 	
-	public function detail($slug)
-	{
-
-		$row = $this->brand->show_by($slug);
-         
-        if (! $row) show_404();
- 
-        $this->db->where([
-            'brand_id' => $row->id
-        ]);
-
-		$data['products'] = $this->product->show_all();
-        $data['title'] = $row->title;
-        $this->load->view('brand/detail', $data);
-	}
+	
 
 
 
